@@ -1,4 +1,8 @@
-public abstract class Money {
+package tdd.money;
+
+import java.util.Objects;
+
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -16,11 +20,21 @@ public abstract class Money {
     public static Money franc(int amount){
         return new Franc(amount,"CHF");
     }
-    public abstract Money times(int multiplier);
+    public Money times(int multiplier){
+        return new Money(amount*multiplier,this.currency);
+    }
 
     @Override
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return money.amount == amount && this.getClass().equals(object.getClass());
+        return money.amount == amount && Objects.equals(this.currency, money.currency);
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
     }
 }
