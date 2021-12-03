@@ -2,7 +2,14 @@ public abstract class Money {
 
     protected int amount;
     protected String currency;
-    protected abstract String currency();
+
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
+    protected String currency() {
+        return currency;
+    }
     public static Money dollar(int amount){
         return new Dollar(amount,"USD");
     }
