@@ -15,10 +15,10 @@ public class Money {
         return currency;
     }
     public static Money dollar(int amount){
-        return new Dollar(amount,"USD");
+        return new Money(amount,"USD");
     }
     public static Money franc(int amount){
-        return new Franc(amount,"CHF");
+        return new Money(amount,"CHF");
     }
     public Money times(int multiplier){
         return new Money(amount*multiplier,this.currency);
