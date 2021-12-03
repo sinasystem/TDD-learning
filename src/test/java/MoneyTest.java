@@ -11,8 +11,8 @@ public class MoneyTest {
     @Test
     void testMultiplicationDollar(){
         Dollar five = new Dollar(5);
-        five.times(2);
-        assertEquals(10,five.amount);
+        Dollar ten = five.times(2);
+        assertEquals(10,ten.amount);
     }
     @Test
     void testEqualDollar(){
@@ -27,8 +27,8 @@ public class MoneyTest {
     @Test
     void testMultiplicationFranc(){
         Franc five = new Franc(5);
-        five.times(2);
-        assertEquals(10,five.amount);
+        Franc ten = five.times(2);
+        assertEquals(10,ten.amount);
     }
     @Test
     void testEqualFranc(){
