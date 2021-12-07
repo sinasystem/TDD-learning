@@ -74,11 +74,11 @@ public class MoneyTest {
     }
     @Test
     void testMixedAdditions(){
-        Money fivedollars = Money.dollar(5);
-        Money tenfranks = Money.franc(10);
+        Money fiveDollars = Money.dollar(5);
+        Money tenFranks = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF","USD",2);
-        Money result = bank.reduce(fivedollars.plus(tenfranks),"USD");
+        Money result = bank.reduce(fiveDollars.plus(tenFranks),"USD");
         assertEquals(Money.dollar(10),result);
     }
 
